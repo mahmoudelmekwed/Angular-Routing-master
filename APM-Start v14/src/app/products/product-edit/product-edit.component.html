@@ -6,7 +6,8 @@
   <div class="card-body"
        *ngIf="product">
 <div class="wizard">
-  <a [routerLink]="['info']">Basic information</a>
+  <a [routerLink]="['info']"
+  routerLinkActive="active">Basic information</a>
   <a [routerLink]="['tags']">Search tags</a>
 </div>
 <router-outlet></router-outlet>
@@ -16,6 +17,7 @@
                 style="width:80px"
                 type="button"
                 title="Save your entered data"
+                [disabled]="!isValid()"
                 (click)="saveProduct()">
           Save
         </button>

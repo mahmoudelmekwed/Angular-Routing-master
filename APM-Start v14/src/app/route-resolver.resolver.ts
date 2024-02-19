@@ -15,6 +15,7 @@ export class ProductResolver implements Resolve<ProductResolved> {
 
  constructor(private productservice : ProductService){}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ProductResolved>  {
+    console.log(route)
     const id = route.paramMap.get('id');
     if (isNaN(Number(id))){
       const message = `Product id was not a number: ${id}`;
